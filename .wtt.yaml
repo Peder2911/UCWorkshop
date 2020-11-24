@@ -1,0 +1,2 @@
+- filetype: .md
+  call: ./build.sh 
