@@ -1,23 +1,86 @@
 <html>
    <head>
+      <!--
       <link rel="stylesheet" href="https://latex.now.sh/style.css">
+      -->
       <link rel="stylesheet" href="./style.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+      <style>
+      </style>
    </head>
    <body>
-      <div id="content"></div>
+      <div id="wrapper">
+         <div id="container">
+            <div class="navbar">
+               <h1>Use case workshop docs</h1>
+               <div id="documents">
+                  <button class="card" id="document.md">Workshop overview</button>
+                  <button class="card" id="plan.md">Plan</button>
+               </div>
+            </div>
+            <div class="main">
+               <div class="sidebar">
+                  <div class="card" id="termbox"></div>
+               </div>
+               <div class="content">
+                  <div class="card" id="paper"></div>
+               </div>
+            </div>
+         </div>
+      </div>
       <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
       <script>
+         let termShower = document.querySelector("#termbox")
+
+         const show = function(e){
+            xhttp.open("GET",`content/${e.target.id}`,true)
+            xhttp.send()
+         }
+
+         const clearTerm = function(){
+            termShower.innerHTML = ""
+         }
+
+         const showTerm = function(e){
+            clearTerm()
+
+            let term = e.target.textContent
+            term = term.replace(/ /g,"_")
+
+            let termRequest = new XMLHttpRequest();
+            termRequest.onreadystatechange = function(){
+               if (this.readyState == 4 && this.status == 200){
+                  termShower.innerHTML = this.responseText
+               }
+            }
+
+            termRequest.open("GET",`content/terms/${term}.txt`,true)
+            termRequest.send()
+         }
+
+
          let converter = new showdown.Converter()
-         let el = document.getElementById("content")
+         let paper = document.getElementById("paper")
          let xhttp = new XMLHttpRequest();
          xhttp.onreadystatechange = function(){
             if (this.readyState == 4 && this.status == 200){
-               el.innerHTML = converter.makeHtml(this.responseText)
+               paper.innerHTML = converter.makeHtml(this.responseText)
+               let termLinks = [document.querySelectorAll("span.term")]
+               termLinks[0].forEach((el)=>{
+                  el.addEventListener("mouseover",showTerm)
+                  el.addEventListener("mouseout",clearTerm)
+               })
             }
          }
-         xhttp.open("GET","content/document.md",true)
-         xhttp.send()
+
+         let documents = document.getElementById("documents")
+         let buttons = [...documents.children]
+         buttons.forEach((btn)=>{
+            btn.addEventListener("click",show)
+         })
+         document.getElementById("document.md").click()
       </script>
    </body>
 </html>

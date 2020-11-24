@@ -1,0 +1,3 @@
+
+A use-case is a more or less structured description of an interaction between
+an agent and a system, wherein the actor satisfies a goal.

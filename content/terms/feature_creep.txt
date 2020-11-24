@@ -1,0 +1,5 @@
+Feature creep (sometimes known as requirements creep or scope creep) is a
+tendency for product or project requirements to increase during development
+beyond those originally foreseen. Feature creep may be driven by a client's
+growing "wish list" or by developers themselves as they see opportunity for
+improving the product.

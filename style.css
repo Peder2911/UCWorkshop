@@ -1,8 +1,92 @@
-html {
-   font-size: 20px
+html,body {
+   font-size: 18px;
+   padding: 0px;
+   margin: 0px; 
+   background: #fcfcfc; 
+   font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+   display: grid;
+   grid-template-rows: 1fr 1fr;
+}
+
+div#container {
+   display: grid;
+   grid-gap: 12px;
+}
+
+div#wrapper {
+   display: grid;
+   justify-items: center;
+   height: 80vh;
+   width: 100vw;
+}
+
+div.main{
+   display: grid;
+   grid-template-columns: 250px auto;
+   grid-gap: 8px;
+}
+
+.card {
+   box-shadow: 4px 8px #606060;
+   border: 1px solid #606060;
+   background: #fefefc;
+}
+
+div#paper {
+   overflow-y: scroll;
+   height: 707px;
+   width: 500px;
+   padding: 100px;
+   box-shadow: 4px 8px #606060;
+   border: 1px solid #606060;
+   background: #fefefa;
+   font-size: 15px;
+   color: #202000; 
+}
+
+#termbox {
+   min-height: 80px;
+   padding: 20px;
+   font-size: 14px;
+   font-family: monospace;
+}
+
+div#documents {
+   grid-gap: 18px;
+}
+
+.sidebar>* {
+   margin-bottom: 20px;
+}
+
+button {
+   border: 1px solid #606060;
+   height: 50px;
+   min-width: 80px;
+   box-shadow: 2px 4px #606060;
+   background: #e0e0e0;
+   outline: none;
+   padding: 0 20px;
+}
+
+button:active {
+   background: #a0a0a0;
+}
+
+div.content {
+   display: grid;
+   grid-template-columns: 1fr;
+      
+}
+
+span.term:hover {
+   color: red;
 }
 
 span.term {
    color: purple;
-   font-family: monospace;
+   cursor: pointer;
 }

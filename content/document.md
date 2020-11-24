@@ -1,5 +1,5 @@
 
-## Requirements engineering 
+## Workshop overview 
 
 Hey! 👋
 
@@ -49,7 +49,7 @@ as a whole:
 It didn't make sense to proceed without first answering these important
 questions. To start the process of answering them, we prompted the team to
 start brainstorming by writing down 
-<span class="term">use cases</span>.
+<span class="term">use case</span>s.
 
 The rationale behind this is that by describing the way we are currently using
 ViEWS, or how we imagine using ViEWS, we uncover the goals we are achieving, or
