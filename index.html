@@ -3,7 +3,20 @@
       <link rel="stylesheet" href="https://latex.now.sh/style.css">
    </head>
    <body>
-      Hello world!
+      <div id="content"></div>
       <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+      <script>
+         let converter = new showdown.Converter()
+         let el = document.getElementById("content")
+         let xhttp = new XMLHttpRequest();
+         xhttp.onreadystatechange = function(){
+            if (this.readyState == 4 && this.status == 200){
+               el.innerHTML = converter.makeHtml(this.responseText)
+            }
+         }
+         xhttp.open("GET","content/document.md",true)
+         xhttp.send()
+      </script>
    </body>
 </html>
