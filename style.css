@@ -19,6 +19,7 @@ div#container {
 div#wrapper {
    display: grid;
    justify-items: center;
+   align-items: start;
    height: 80vh;
    width: 100vw;
 }
@@ -56,6 +57,34 @@ div#paper {
 
 div#documents {
    grid-gap: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+     display: none;
+  }
+
+  .navbar {
+     padding-left: 40px;
+  }
+  #container {
+     width: 100vw;
+  }
+  .main {
+     grid-template-columns: 1fr !important;
+     place-items: center !important;
+  }
+  .content {
+     justify-items: center;
+     height: 100%;
+     margin: 0px;
+  }
+  div#paper {
+     height: 100%;
+     width: 70%;
+     overflow-y: auto;
+     font-size: 30px;
+  }
 }
 
 .sidebar>* {
