@@ -119,3 +119,12 @@ span.term {
    color: purple;
    cursor: pointer;
 }
+
+pre {
+   background: #4070a0;
+   padding: 10px;
+   border-radius: 10px;
+}
+code {
+   color: white;
+}
