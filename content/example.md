@@ -13,10 +13,12 @@ these predictions to the canonical ViEWS prediction ensemble, to figure out if
 they are better. NN has read about ViEWS offering plotting and metrics which
 are useful for comparing predictions from various models.
 
-Workflow:
+## Workflow:
 Actors:
-   a) NN - An external conflict researcher
-   b) compare.views.com - A front for the ViEWS Team
+<ol type="a">
+   <li>NN - An external conflict researcher</li>
+   <li>compare.views.com - A front for the ViEWS team</li>
+</ol>
 
 a) goes to compare.views.com
 
